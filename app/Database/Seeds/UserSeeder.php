@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
             'unsigned'       => true,
             'auto_increment' => true,
         ],
-        'username'    => [
+        'name'    => [
             'type'       => 'VARCHAR',
             'constraint' => '100',
         ],
