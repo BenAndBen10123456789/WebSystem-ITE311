@@ -18,6 +18,8 @@ $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::attempt');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/dashboard', 'Home::dashboard');
+// Role dashboards
+$routes->get('/admin/dashboard', 'Admin::dashboard');
 // Registration
 $routes->get('/register', 'Auth::register');
 $routes->post('/register', 'Auth::store');

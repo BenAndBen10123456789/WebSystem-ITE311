@@ -14,6 +14,15 @@
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/') ?>">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/about') ?>">About</a></li>
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact') ?>">Contact</a></li>
+          <?php $session = session(); $role = strtolower((string) $session->get('role')); ?>
+          <?php if ($session->get('isLoggedIn')): ?>
+            <?php if ($role === 'admin'): ?>
+              <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/dashboard') ?>">Admin</a></li>
+            <?php endif; ?>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('/logout') ?>">Logout</a></li>
+          <?php else: ?>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('/login') ?>">Login</a></li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>
