@@ -18,6 +18,8 @@
           <?php if ($session->get('isLoggedIn')): ?>
             <?php if ($role === 'admin'): ?>
               <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/dashboard') ?>">Admin</a></li>
+            <?php elseif ($role === 'teacher' || $role === 'instructor'): ?>
+              <li class="nav-item"><a class="nav-link" href="<?= base_url('/teacher/dashboard') ?>">Teacher</a></li>
             <?php endif; ?>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('/logout') ?>">Logout</a></li>
           <?php else: ?>
