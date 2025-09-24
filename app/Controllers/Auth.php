@@ -5,105 +5,161 @@ namespace App\Controllers;
 class Auth extends BaseController
 {
 
-    public function login()
-    {
-        $session = session();
-        if ($session->get('isLoggedIn')) {
-            return redirect()->to(base_url('dashboard'));
-        }
+	public function register()
+	{
+		$session = session();
+		if ($session->get('userID')) {
+			return redirect()->to(base_url('dashboard'));
+		}
 
-        return view('login');
-    }
+		if ($this->request->getMethod() === 'post') {
+			$name = trim((string) $this->request->getPost('name'));
+			$email = trim((string) $this->request->getPost('email'));
+			$password = (string) $this->request->getPost('password');
+			$passwordConfirm = (string) $this->request->getPost('password_confirm');
 
-    public function attempt()
-    {
-        $request = $this->request;
-        $email = trim((string) $request->getPost('email'));
-        $password = (string) $request->getPost('password');
+			if ($name === '' || $email === '' || $password === '' || $passwordConfirm === '') {
+				return redirect()->back()->withInput()->with('register_error', 'All fields are required.');
+			}
 
-        // Try database user first
-        $userModel = new \App\Models\UserModel();
-        $user = $userModel->where('email', $email)->first();
-        if ($user && password_verify($password, $user['password'])) {
-            $session = session();
-            $session->set([
-                'isLoggedIn' => true,
-                'userEmail' => $email,
-                'role' => $user['role'] ?? 'student',
-            ]);
-            // Role-based redirect
-            $role = strtolower((string) $session->get('role'));
-            if ($role === 'admin') {
-                return redirect()->to(base_url('admin/dashboard'));
-            }
-            if ($role === 'teacher' || $role === 'instructor') {
-                return redirect()->to(base_url('teacher/dashboard'));
-            }
-            return redirect()->to(base_url('student/dashboard'));
-        }
+			if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
+				return redirect()->back()->withInput()->with('register_error', 'Invalid email address.');
+			}
 
-        return redirect()->back()->with('login_error', 'Invalid credentials');
-    }
+			if ($password !== $passwordConfirm) {
+				return redirect()->back()->withInput()->with('register_error', 'Passwords do not match.');
+			}
 
-    public function logout()
-    {
-        $session = session();
-        $session->destroy();
-        return redirect()->to(base_url('login'));
-    }
+			$userModel = new \App\Models\UserModel();
 
-    public function register()
-    {
-        $session = session();
-        if ($session->get('isLoggedIn')) {
-            return redirect()->to(base_url('dashboard'));
-        }
+			if ($userModel->where('email', $email)->first()) {
+				return redirect()->back()->withInput()->with('register_error', 'Email is already registered.');
+			}
 
-        return view('register');
-    }
+			$passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-    public function store()
-    {
-        $name = trim((string) $this->request->getPost('name'));
-        $email = trim((string) $this->request->getPost('email'));
-        $password = (string) $this->request->getPost('password');
-        $passwordConfirm = (string) $this->request->getPost('password_confirm');
+			$userId = $userModel->insert([
+				'name' => $name,
+				'email' => $email,
+				'password' => $passwordHash,
+				'role' => 'student',
+			], true);
 
-        if ($name === '' || $email === '' || $password === '' || $passwordConfirm === '') {
-            return redirect()->back()->withInput()->with('register_error', 'All fields are required.');
-        }
+			if (! $userId) {
+				return redirect()->back()->withInput()->with('register_error', 'Registration failed.');
+			}
 
-        if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return redirect()->back()->withInput()->with('register_error', 'Invalid email address.');
-        }
+			return redirect()->to(base_url('login'))->with('register_success', 'Account created successfully. Please log in.');
+		}
 
-        if ($password !== $passwordConfirm) {
-            return redirect()->back()->withInput()->with('register_error', 'Passwords do not match.');
-        }
+		return view('auth/register');
+	}
 
-        $userModel = new \App\Models\UserModel();
+	public function login()
+	{
+		$session = session();
+		if ($session->get('userID')) {
+			return redirect()->to(base_url('dashboard'));
+		}
 
-        // Check for existing email
-        if ($userModel->where('email', $email)->first()) {
-            return redirect()->back()->withInput()->with('register_error', 'Email is already registered.');
-        }
+		if ($this->request->getMethod() === 'post') {
+			$email = trim((string) $this->request->getPost('email'));
+			$password = (string) $this->request->getPost('password');
 
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+			if ($email === '' || $password === '') {
+				return redirect()->back()->withInput()->with('login_error', 'Email and password are required.');
+			}
 
-        $userId = $userModel->insert([
-            'name' => $name,
-            'email' => $email,
-            'role' => 'student',
-            'password' => $passwordHash,
-        ], true);
+			$userModel = new \App\Models\UserModel();
+			$user = $userModel->where('email', $email)->first();
+			if ($user) {
+				$stored = trim((string) $user['password']);
+				$valid = false;
+				$info = \password_get_info($stored);
+				$isHashed = ($info['algo'] !== 0)
+					|| (strpos($stored, '$2y$') === 0)
+					|| (strpos($stored, '$argon2') === 0);
 
-        if (! $userId) {
-            return redirect()->back()->withInput()->with('register_error', 'Registration failed.');
-        }
+				if ($isHashed && password_verify($password, $stored)) {
+					$valid = true;
+				} elseif (! $isHashed && hash_equals($stored, $password)) {
+					$valid = true;
+					// upgrade to secure hash
+					$userModel->update($user['id'], ['password' => password_hash($password, PASSWORD_DEFAULT)]);
+				} elseif (strlen($stored) === 32 && ctype_xdigit($stored) && hash_equals(strtolower($stored), md5($password))) {
+					$valid = true;
+					// upgrade MD5 to secure hash
+					$userModel->update($user['id'], ['password' => password_hash($password, PASSWORD_DEFAULT)]);
+				}
 
-        // Redirect to login with success message
-        return redirect()
-            ->to(base_url('login'))
-            ->with('register_success', 'Account created successfully. Please log in.');
-    }
+				if ($valid) {
+					$session->regenerate();
+				$session->set([
+					'userID' => $user['id'],
+					'name' => $user['name'],
+					'email' => $user['email'],
+					'role' => $user['role'] ?? 'student',
+					'isLoggedIn' => true,
+				]);
+					$session->setFlashdata('welcome', 'Welcome, ' . $user['name'] . '!');
+					return redirect()->to('/dashboard');
+				}
+			}
+
+			return redirect()->back()->with('login_error', 'Invalid credentials');
+		}
+
+		return view('auth/login');
+	}
+
+	public function logout()
+	{
+		$session = session();
+		$session->destroy();
+		return redirect()->to(base_url('login'));
+	}
+
+	public function dashboard()
+	{
+		$session = session();
+		if (! $session->get('userID')) {
+			return redirect()->to(base_url('login'));
+		}
+
+		$role = strtolower((string) $session->get('role'));
+		$name = (string) $session->get('name');
+
+		$db = \Config\Database::connect();
+		$data = [
+			'role' => $role,
+			'name' => $name,
+			'now' => \CodeIgniter\I18n\Time::now(),
+		];
+
+		if ($role === 'admin') {
+			$data['totalUsers'] = (int) $db->table('users')->countAllResults();
+			$data['totalCourses'] = $db->table('courses')->countAllResults(false);
+		}
+
+		if ($role === 'teacher' || $role === 'instructor') {
+			$data['myCourses'] = $db->table('courses')->where('teacher_email', $session->get('email'))->limit(5)->get()->getResultArray();
+		}
+
+		if ($role === 'student') {
+			// Attempt to fetch basic enrollments if tables exist; otherwise provide empty list
+			try {
+				$data['myEnrollments'] = $db->table('enrollments e')
+					->select('e.id, c.title as course_title')
+					->join('courses c', 'c.id = e.course_id', 'left')
+					->where('e.student_email', $session->get('email'))
+					->limit(5)
+					->get()
+					->getResultArray();
+			} catch (\Throwable $th) {
+				$data['myEnrollments'] = [];
+			}
+		}
+
+		return view('auth/dashboard', $data);
+	}
 }
