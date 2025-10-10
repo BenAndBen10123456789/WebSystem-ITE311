@@ -1,0 +1,878 @@
+ERROR - 2025-10-10 14:19:14 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:19:14 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:19:14 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:33:38 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:33:38 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:33:38 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:36:34 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:36:34 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:36:34 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:36:34 --> Error: Class "App\Models\EnrollmentModel" not found
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 126.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 4 APPPATH\Controllers\Auth.php(261): view('auth/dashboard', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:37:03 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:37:03 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:37:03 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:37:03 --> Error: Class "App\Models\EnrollmentModel" not found
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 126.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 4 APPPATH\Controllers\Auth.php(261): view('auth/dashboard', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:37:04 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:37:04 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:37:04 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:37:04 --> Error: Class "App\Models\EnrollmentModel" not found
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 126.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 4 APPPATH\Controllers\Auth.php(261): view('auth/dashboard', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:37:34 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:37:34 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:37:34 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:37:34 --> Error: Class "App\Models\EnrollmentModel" not found
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 126.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 4 APPPATH\Controllers\Auth.php(261): view('auth/dashboard', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:38:21 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:38:21 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:38:21 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:38:21 --> Error: Class "App\Models\EnrollmentModel" not found
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 126.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 4 APPPATH\Controllers\Auth.php(261): view('auth/dashboard', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:38:35 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(217): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:38:35 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(229): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:38:35 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:38:35 --> Error: Class "App\Models\EnrollmentModel" not found
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 126.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 4 APPPATH\Controllers\Auth.php(261): view('auth/dashboard', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:43:56 --> mysqli_sql_exception: Table 'enrollments' already exists in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `e...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `e...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `e...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `e...')
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Database\Migrations\2024-09-02-171815_CreateEnrollmentsTable.php(44): CodeIgniter\Database\Forge->createTable('enrollments')
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateEnrollmentsTable->up()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\ITE311-GUMABON\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-10-10 14:44:26 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(218): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:26 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(226): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:26 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:26 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:44:26 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(275): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:44:27 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(218): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:27 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(226): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:27 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:27 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:44:27 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(275): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:44:37 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(218): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:37 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(226): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:37 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:44:37 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:44:37 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(275): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:45:27 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(218): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:45:27 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(226): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:45:27 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:45:27 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:45:27 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(275): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:46:29 --> mysqli_sql_exception: Unknown column 'c.title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `c`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `c`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `c`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `c`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(218): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:46:29 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(226): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:46:29 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:46:29 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:46:29 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(275): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-10 14:55:26 --> mysqli_sql_exception: Table 'lms_gumabon.assignments' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`id`...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`id`...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-10 14:55:26 --> mysqli_sql_exception: Table 'lms_gumabon.grades' doesn't exist in C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GUMABON\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `g`.`sco...', 0)
+#1 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `g`.`sco...')
+#2 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `g`.`sco...')
+#3 C:\xampp\htdocs\ITE311-GUMABON\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `g`.`sco...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GUMABON\app\Controllers\Auth.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GUMABON\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GUMABON\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GUMABON\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-10 14:55:26 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(275): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-10 14:56:23 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(246): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-10 14:56:23 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(246): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-10 15:03:58 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(246): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-10 15:03:59 --> ErrorException: Undefined property: Config\App::$CSRFProtection
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 204.
+ 1 APPPATH\Views\auth\dashboard.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: Config\\App::$CSRFProtection', 'C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php', 204)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GUMABON\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(246): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
