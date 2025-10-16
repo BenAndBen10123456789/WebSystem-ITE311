@@ -26,12 +26,12 @@ $routes->get('/dashboard', 'Auth::dashboard');
 $routes->get('/announcements', 'Announcement::index');
 $routes->post('/course/enroll', 'Course::enroll');
 
-// Teacher routes (protected)
+// Teacher routes (protected) - uses existing Auth controller dashboard
 $routes->group('teacher', ['filter' => 'roleauth'], function($routes) {
-    $routes->get('dashboard', 'Teacher::dashboard');
+    $routes->get('dashboard', 'Auth::dashboard');
 });
 
-// Admin routes (protected)
+// Admin routes (protected) - uses existing Auth controller dashboard
 $routes->group('admin', ['filter' => 'roleauth'], function($routes) {
-    $routes->get('dashboard', 'Admin::dashboard');
+    $routes->get('dashboard', 'Auth::dashboard');
 });

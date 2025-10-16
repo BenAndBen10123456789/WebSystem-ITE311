@@ -30,7 +30,7 @@ class RoleAuth implements FilterInterface
         $accessRules = [
             'admin' => ['admin', 'announcements'], // admins can access admin/* and announcements
             'teacher' => ['teacher', 'announcements'], // teachers can access teacher/* and announcements
-            'student' => ['student', 'announcements'] // students can access student/* and announcements
+            'student' => ['announcements'] // students can only access announcements
         ];
 
         $allowedPaths = $accessRules[$userRole] ?? [];
