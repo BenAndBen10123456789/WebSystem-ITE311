@@ -111,29 +111,50 @@ class Auth extends Controller
                         // Use the name field directly from database
                         $userName = $user['name'] ?? $user['email'];
                         
-                        // Set session data
+                        // Set session data (handle instructor as teacher)
+                        $sessionRole = strtolower($user['role'] ?? 'student');
+                        if ($sessionRole === 'instructor') {
+                            $sessionRole = 'teacher';
+                        }
+
                         $sessionData = [
                             'user_id' => $user['id'],
                             'user_name' => $userName,
                             'user_email' => $user['email'],
-                            'role' => $user['role'] ?? 'student',
+                            'role' => $sessionRole,
                             'isLoggedIn' => true
                         ];
-                        
+
                         // Prevent session fixation
                         $session->regenerate();
                         $session->set($sessionData);
                         $session->setFlashdata('success', 'Welcome, ' . $userName . '!');
 
-                        // Role-based redirection
-                        switch (strtolower($user['role'])) {
+                        log_message('info', 'Session data set: ' . print_r($sessionData, true));
+
+                        // Role-based redirection with debugging
+                        $userRole = strtolower($user['role'] ?? 'student');
+                        log_message('info', 'User role for redirection: ' . $userRole . ' for user: ' . $user['email']);
+
+                        // Handle instructor as teacher
+                        if ($userRole === 'instructor') {
+                            $userRole = 'teacher';
+                        }
+
+                        log_message('info', 'Final role for redirection: ' . $userRole);
+
+                        switch ($userRole) {
                             case 'student':
+                                log_message('info', 'Redirecting student to announcements');
                                 return redirect()->to('/announcements');
                             case 'teacher':
-                                return redirect()->to('/teacher/dashboard');
+                                log_message('info', 'Redirecting teacher to dashboard');
+                                return redirect()->to('/dashboard');
                             case 'admin':
-                                return redirect()->to('/admin/dashboard');
+                                log_message('info', 'Redirecting admin to dashboard');
+                                return redirect()->to('/dashboard');
                             default:
+                                log_message('info', 'Unknown role: ' . $userRole . ', redirecting to announcements');
                                 return redirect()->to('/announcements');
                         }
                     } else {
@@ -172,6 +193,11 @@ class Auth extends Controller
         
         $role = strtolower((string) $session->get('role'));
         $userId = (int) $session->get('user_id');
+
+        // Handle instructor as teacher
+        if ($role === 'instructor') {
+            $role = 'teacher';
+        }
 
         // Prepare role-specific data
         $db = \Config\Database::connect();

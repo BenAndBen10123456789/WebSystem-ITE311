@@ -26,26 +26,44 @@ class RoleAuth implements FilterInterface
 
         $userRole = strtolower($session->get('role'));
 
+        // Handle instructor as teacher
+        if ($userRole === 'instructor') {
+            $userRole = 'teacher';
+        }
+
+        log_message('info', 'RoleAuth filter: User ' . $session->get('user_email') . ' with role ' . $userRole . ' accessing path: ' . $path);
+
         // Define role-based access rules
         $accessRules = [
-            'admin' => ['admin', 'announcements'], // admins can access admin/* and announcements
-            'teacher' => ['teacher', 'announcements'], // teachers can access teacher/* and announcements
-            'student' => ['announcements'] // students can only access announcements
+            'admin' => ['admin'], // admins can access any route starting with /admin
+            'teacher' => ['teacher'], // teachers can access routes starting with /teacher
+            'student' => ['student', 'announcements'] // students can access /student/* and /announcements
         ];
 
-        $allowedPaths = $accessRules[$userRole] ?? [];
+        $allowedPrefixes = $accessRules[$userRole] ?? [];
 
         // Check if user has access to the current path
         $hasAccess = false;
 
-        foreach ($allowedPaths as $allowedPath) {
-            if (strpos($path, $allowedPath) === 0) {
+        foreach ($allowedPrefixes as $prefix) {
+            if (strpos($path, $prefix) === 0) {
                 $hasAccess = true;
                 break;
             }
         }
 
+        // Special case: allow access to /announcements for all logged-in users
+        if (!$hasAccess && $path === 'announcements') {
+            $hasAccess = true;
+        }
+
+        log_message('info', 'RoleAuth filter: Path: ' . $path);
+        log_message('info', 'RoleAuth filter: Allowed prefixes for role ' . $userRole . ': ' . implode(', ', $allowedPrefixes));
+        log_message('info', 'RoleAuth filter: Has access: ' . ($hasAccess ? 'true' : 'false'));
+
         if (!$hasAccess) {
+            log_message('error', 'Access denied for user: ' . $session->get('user_email') . ' with role: ' . $userRole . ' trying to access: ' . $path);
+            log_message('error', 'Session data: ' . print_r($session->get(), true));
             $session->setFlashdata('error', 'Access Denied: Insufficient Permissions');
             return redirect()->to('/announcements');
         }

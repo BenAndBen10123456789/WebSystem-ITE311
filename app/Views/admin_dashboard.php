@@ -5,14 +5,12 @@
 <?= $this->section('content') ?>
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Welcome, Admin!</h1>
-    <a href="/logout" class="btn btn-danger">Logout</a>
 </div>
 
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">Admin Dashboard</h5>
-        <p class="card-text">Welcome to your admin dashboard, <?= htmlspecialchars($user_name) ?>!</p>
-        <p class="card-text">You are logged in as: <strong><?= htmlspecialchars($user_email) ?></strong></p>
+        <p class="card-text">Welcome to your admin dashboard!</p>
 
         <div class="mt-4">
             <h6>Quick Actions:</h6>

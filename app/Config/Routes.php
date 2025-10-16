@@ -28,10 +28,10 @@ $routes->post('/course/enroll', 'Course::enroll');
 
 // Teacher routes (protected)
 $routes->group('teacher', ['filter' => 'roleauth'], function($routes) {
-    $routes->get('dashboard', 'Teacher::dashboard');
+    $routes->get('dashboard', 'Auth::dashboard');
 });
 
 // Admin routes (protected)
 $routes->group('admin', ['filter' => 'roleauth'], function($routes) {
-    $routes->get('dashboard', 'Admin::dashboard');
+    $routes->get('dashboard', 'Auth::dashboard');
 });

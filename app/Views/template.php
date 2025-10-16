@@ -17,13 +17,7 @@
           <?php $session = session(); $role = strtolower((string) $session->get('role')); ?>
           <?php if ($session->get('isLoggedIn')): ?>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('/dashboard') ?>">Dashboard</a></li>
-            <?php if ($role === 'admin'): ?>
-              <li class="nav-item"><a class="nav-link" href="<?= base_url('/admin/dashboard') ?>">Admin</a></li>
-            <?php elseif ($role === 'teacher' || $role === 'instructor'): ?>
-              <li class="nav-item"><a class="nav-link" href="<?= base_url('/teacher/dashboard') ?>">Teacher</a></li>
-            <?php else: ?>
-              <li class="nav-item"><a class="nav-link" href="<?= base_url('/dashboard') ?>">Student</a></li>
-            <?php endif; ?>
+            <li class="nav-item"><a class="nav-link" href="<?= base_url('/announcements') ?>">Announcements</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('/logout') ?>">Logout</a></li>
           <?php else: ?>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('/login') ?>">Login</a></li>
