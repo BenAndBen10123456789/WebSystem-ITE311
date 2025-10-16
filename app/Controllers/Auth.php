@@ -125,8 +125,17 @@ class Auth extends Controller
                         $session->set($sessionData);
                         $session->setFlashdata('success', 'Welcome, ' . $userName . '!');
 
-                        // Unified dashboard redirect
-                        return redirect()->to('/dashboard');
+                        // Role-based redirection
+                        switch (strtolower($user['role'])) {
+                            case 'student':
+                                return redirect()->to('/announcements');
+                            case 'teacher':
+                                return redirect()->to('/teacher/dashboard');
+                            case 'admin':
+                                return redirect()->to('/admin/dashboard');
+                            default:
+                                return redirect()->to('/announcements');
+                        }
                     } else {
                         $session->setFlashdata('login_error', 'Invalid email or password.');
                     }

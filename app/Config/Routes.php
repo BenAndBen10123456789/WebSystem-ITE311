@@ -23,4 +23,15 @@ $routes->post('/login', 'Auth::login');
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/dashboard', 'Auth::dashboard');
+$routes->get('/announcements', 'Announcement::index');
 $routes->post('/course/enroll', 'Course::enroll');
+
+// Teacher routes (protected)
+$routes->group('teacher', ['filter' => 'roleauth'], function($routes) {
+    $routes->get('dashboard', 'Teacher::dashboard');
+});
+
+// Admin routes (protected)
+$routes->group('admin', ['filter' => 'roleauth'], function($routes) {
+    $routes->get('dashboard', 'Admin::dashboard');
+});
