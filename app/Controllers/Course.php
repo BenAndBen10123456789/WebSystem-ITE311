@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\EnrollmentModel;
+use App\Models\NotificationModel;
 use CodeIgniter\API\ResponseTrait; // For JSON responses (optional, but useful)
 
 class Course extends BaseController
@@ -67,6 +68,24 @@ class Course extends BaseController
                 ->where('course_id', $courseId)
                 ->get()
                 ->getRowArray();
+            
+            // Step 7: Create notification for the student
+            $courseTitle = $course['course_title'] ?? 'the course';
+            $notificationModel = new NotificationModel();
+            $notificationData = [
+                'user_id' => $userId,
+                'message' => "You have been enrolled in {$courseTitle}",
+                'is_read' => 0,
+                'created_at' => date('Y-m-d H:i:s')
+            ];
+            
+            // Insert notification into the notifications table
+            try {
+                $notificationModel->insert($notificationData);
+            } catch (\Exception $e) {
+                // Log error but don't fail enrollment if notification fails
+                log_message('error', 'Failed to create notification: ' . $e->getMessage());
+            }
             
             return $this->response->setJSON([
                 'success' => true,

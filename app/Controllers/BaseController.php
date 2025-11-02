@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\NotificationModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -54,5 +55,22 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');
+    }
+
+    /**
+     * Helper method to get unread notification count for the logged-in user.
+     * Can be used in any controller that extends BaseController.
+     *
+     * @return int
+     */
+    protected function getUnreadNotificationCount()
+    {
+        $userId = session()->get('user_id');
+        if (!$userId) {
+            return 0;
+        }
+
+        $notificationModel = new NotificationModel();
+        return $notificationModel->getUnreadCount($userId);
     }
 }

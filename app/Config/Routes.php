@@ -26,6 +26,10 @@ $routes->get('/dashboard', 'Auth::dashboard');
 $routes->get('/announcements', 'Announcement::index');
 $routes->post('/course/enroll', 'Course::enroll');
 
+// Notifications routes
+$routes->get('/notifications', 'Notifications::get');
+$routes->post('/notifications/mark_read/(:num)', 'Notifications::mark_as_read/$1');
+
 // Materials routes
 $routes->get('/admin/course/(:num)/upload', 'Materials::upload/$1');
 $routes->post('/admin/course/(:num)/upload', 'Materials::upload/$1');

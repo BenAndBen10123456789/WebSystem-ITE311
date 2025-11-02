@@ -426,6 +426,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Insert at the beginning of the list
                     enrolledUl.insertBefore(newListItem, enrolledUl.firstChild);
+                    
+                    // Refresh notifications after successful enrollment
+                    if (typeof window.fetchNotifications === 'function') {
+                        setTimeout(function() {
+                            window.fetchNotifications();
+                        }, 500); // Small delay to ensure notification is saved in DB
+                    }
                 } else {
                     // Show error message
                     const messageDiv = document.getElementById('enrollment-message');
