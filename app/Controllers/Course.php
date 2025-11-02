@@ -52,9 +52,31 @@ class Course extends BaseController
         ];
 
         if ($enrollmentModel->enrollUser($data)) {
+            // Get course details for the response
+            $db = \Config\Database::connect();
+            $course = $db->table('courses')
+                ->select('id, course_title, description')
+                ->where('id', $courseId)
+                ->get()
+                ->getRowArray();
+            
+            // Get enrollment date
+            $enrollment = $db->table('enrollments')
+                ->select('enrollment_date')
+                ->where('user_id', $userId)
+                ->where('course_id', $courseId)
+                ->get()
+                ->getRowArray();
+            
             return $this->response->setJSON([
                 'success' => true,
-                'message' => 'Successfully enrolled in the course!'
+                'message' => 'Successfully enrolled in the course!',
+                'course' => [
+                    'course_id' => $course['id'] ?? $courseId,
+                    'course_title' => $course['course_title'] ?? '',
+                    'course_description' => $course['description'] ?? '',
+                    'enrollment_date' => $enrollment['enrollment_date'] ?? date('Y-m-d H:i:s')
+                ]
             ]);
         } else {
             return $this->response->setJSON([

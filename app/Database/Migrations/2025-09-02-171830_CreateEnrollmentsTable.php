@@ -8,45 +8,43 @@ class CreateEnrollmentsTable extends Migration
 {
     public function up()
     {
-        // Define the fields
-        $fields = [
+        $this->forge->addField([
             'id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true,
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'user_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true,
+                'type'       => 'INT',
+                'constraint' => 11,
+                'unsigned'   => true,
             ],
             'course_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true,
+                'type'       => 'INT',
+                'constraint' => 11,
+                'unsigned'   => true,
             ],
             'enrollment_date' => [
                 'type' => 'DATETIME',
                 'null' => false,
             ],
-        ];
+            'created_at' => ['type' => 'DATETIME', 'null' => true],
+            'updated_at' => ['type' => 'DATETIME', 'null' => true],
+        ]);
 
-        // Define primary key
-        $this->forge->addField($fields);
-        $this->forge->addKey('id', true); // Primary key
-
-        // Define foreign keys (assuming users and courses tables exist with 'id' primary key)
+        $this->forge->addKey('id', true);
+        
+        // Add foreign keys - these will only work if users and courses tables exist
         $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('course_id', 'courses', 'id', 'CASCADE', 'CASCADE');
 
-        // Create the table
         $this->forge->createTable('enrollments');
     }
 
     public function down()
     {
-        // Drop the table to reverse the migration
         $this->forge->dropTable('enrollments');
     }
 }
+

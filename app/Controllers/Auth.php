@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\MaterialModel;
 use CodeIgniter\Controller;
 
 class Auth extends Controller
@@ -145,8 +146,8 @@ class Auth extends Controller
 
                         switch ($userRole) {
                             case 'student':
-                                log_message('info', 'Redirecting student to announcements');
-                                return redirect()->to('/announcements');
+                                log_message('info', 'Redirecting student to dashboard');
+                                return redirect()->to('/dashboard');
                             case 'teacher':
                                 log_message('info', 'Redirecting teacher to dashboard');
                                 return redirect()->to('/dashboard');
@@ -154,8 +155,8 @@ class Auth extends Controller
                                 log_message('info', 'Redirecting admin to dashboard');
                                 return redirect()->to('/dashboard');
                             default:
-                                log_message('info', 'Unknown role: ' . $userRole . ', redirecting to announcements');
-                                return redirect()->to('/announcements');
+                                log_message('info', 'Unknown role: ' . $userRole . ', redirecting to dashboard');
+                                return redirect()->to('/dashboard');
                         }
                     } else {
                         $session->setFlashdata('login_error', 'Invalid email or password.');
@@ -211,21 +212,35 @@ class Auth extends Controller
                 $roleData['totalStudents'] = $userModel->where('role', 'student')->countAllResults();
                 try {
                     $roleData['totalCourses'] = $db->table('courses')->countAllResults();
+                    // Get all courses for admin to upload materials
+                    $roleData['allCourses'] = $db->table('courses')
+                        ->select('id, course_title, course_code')
+                        ->orderBy('course_title', 'ASC')
+                        ->get()
+                        ->getResultArray();
                 } catch (\Throwable $e) {
                     $roleData['totalCourses'] = 0;
+                    $roleData['allCourses'] = [];
                 }
                 $roleData['recentUsers'] = $userModel->orderBy('created_at', 'DESC')->limit(5)->find();
             } elseif ($role === 'teacher') {
                 $courses = [];
+                $allCourses = [];
                 try {
+                    // Get courses for display (may not have teacher_id yet)
                     $courses = $db->table('courses')
-                        ->select('course_title')
-                        ->where('teacher_id', $userId)
-                        ->orderBy('created_at', 'DESC')
-                        ->get(10)
+                        ->select('id, course_title, course_code')
+                        ->orderBy('course_title', 'ASC')
+                        ->get()
                         ->getResultArray();
+                    // For now, show all courses since teacher_id may not exist
+                    // Later, you can filter by: ->where('teacher_id', $userId)
+                    $roleData['courses'] = $courses;
+                    $roleData['allCourses'] = $courses;
                 } catch (\Throwable $e) {
                     $courses = [];
+                    $roleData['courses'] = [];
+                    $roleData['allCourses'] = [];
                 }
                 $notifications = [];
                 try {
@@ -238,7 +253,6 @@ class Auth extends Controller
                 } catch (\Throwable $e) {
                     $notifications = [];
                 }
-                $roleData['courses'] = $courses;
                 $roleData['notifications'] = $notifications;
             } elseif ($role === 'student') {
                 $enrolledCourses = [];
@@ -268,6 +282,24 @@ class Auth extends Controller
                 }
                 $roleData['enrolledCourses'] = $enrolledCourses;
                 $roleData['availableCourses'] = $availableCourses;
+                
+                // Get materials for enrolled courses
+                $materialModel = new MaterialModel();
+                $courseMaterials = [];
+                try {
+                    foreach ($enrolledCourses as $course) {
+                        $materials = $materialModel->getMaterialsByCourse($course['course_id']);
+                        if (!empty($materials)) {
+                            $courseMaterials[$course['course_id']] = [
+                                'course_title' => $course['course_title'],
+                                'materials' => $materials
+                            ];
+                        }
+                    }
+                } catch (\Throwable $e) {
+                    $courseMaterials = [];
+                }
+                $roleData['courseMaterials'] = $courseMaterials;
             }
         } catch (\Throwable $e) {
             $roleData = [];

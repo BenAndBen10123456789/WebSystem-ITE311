@@ -21,4 +21,15 @@ class UserModel extends Model
     ];
 
     protected $useTimestamps = false; // timestamps handled by DB defaults in migration
+
+    protected $beforeInsert = ['hashPassword'];
+    protected $beforeUpdate = ['hashPassword'];
+
+    protected function hashPassword(array $data)
+    {
+        if (isset($data['data']['password'])) {
+            $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+        }
+        return $data;
+    }
 }
