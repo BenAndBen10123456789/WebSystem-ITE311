@@ -16,6 +16,7 @@
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/') ?>">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/about') ?>">About</a></li>
           <li class="nav-item"><a class="nav-link" href="<?= base_url('/contact') ?>">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= base_url('/courses') ?>">Courses</a></li>
           <?php $session = session(); $role = strtolower((string) $session->get('role')); ?>
           <?php if ($session->get('isLoggedIn')): ?>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('/dashboard') ?>">Dashboard</a></li>
