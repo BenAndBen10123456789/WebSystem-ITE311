@@ -22,9 +22,14 @@ $routes->post('/login', 'Auth::login');
 
 $routes->get('/logout', 'Auth::logout');
 
-$routes->get('/dashboard', 'Auth::dashboard');
+$routes->get('/dashboard', 'Auth::dashboard', ['filter' => 'auth']);
 $routes->get('/announcements', 'Announcement::index');
 $routes->post('/course/enroll', 'Course::enroll');
+
+// Courses listing & search
+$routes->get('/courses', 'Course::index');
+$routes->get('/courses/search', 'Course::search');
+$routes->post('/courses/search', 'Course::search');
 
 // Notifications routes
 $routes->get('/notifications', 'Notifications::get');
@@ -44,4 +49,13 @@ $routes->group('teacher', ['filter' => 'roleauth'], function($routes) {
 // Admin routes (protected)
 $routes->group('admin', ['filter' => 'roleauth'], function($routes) {
     $routes->get('dashboard', 'Auth::dashboard');
+    $routes->get('manage-users', 'ManageUsers::index');
+    $routes->get('manage-users/add', 'ManageUsers::add');
+    $routes->post('manage-users/add', 'ManageUsers::add');
+    $routes->get('manage-users/edit/(:num)', 'ManageUsers::edit/$1');
+    $routes->post('manage-users/edit/(:num)', 'ManageUsers::edit/$1');
+    $routes->post('manage-users/change-role/(:num)', 'ManageUsers::changeRole/$1');
+    $routes->get('manage-users/deactivate/(:num)', 'ManageUsers::deactivate/$1');
+    $routes->get('manage-users/activate/(:num)', 'ManageUsers::activate/$1');
+    $routes->get('manage-users/delete/(:num)', 'ManageUsers::delete/$1');
 });

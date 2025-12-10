@@ -104,4 +104,55 @@ class Course extends BaseController
             ])->setStatusCode(500); // Internal Server Error
         }
     }
+
+    /**
+     * Show list of courses (normal view)
+     */
+    public function index()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('courses');
+        $courses = $builder->select('id, course_code, course_title, description')
+            ->orderBy('course_title', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        return view('courses/index', ['courses' => $courses]);
+    }
+
+    /**
+     * Search courses. Accepts GET or POST param `q`.
+     * Returns JSON for AJAX requests, or a view for normal requests.
+     */
+    public function search()
+    {
+        $term = $this->request->getGet('q');
+        if (empty($term)) {
+            $term = $this->request->getPost('q');
+        }
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('courses');
+
+        if (!empty($term)) {
+            $builder->groupStart()
+                ->like('course_title', $term)
+                ->orLike('course_code', $term)
+                ->orLike('description', $term)
+            ->groupEnd();
+        }
+
+        $results = $builder->select('id, course_code, course_title, description')
+            ->orderBy('course_title', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        // If AJAX request, return JSON
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON(['results' => $results]);
+        }
+
+        // Normal request - render the listing view with results
+        return view('courses/index', ['courses' => $results, 'search_term' => $term]);
+    }
 }

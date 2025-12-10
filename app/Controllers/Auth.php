@@ -109,6 +109,12 @@ class Auth extends Controller
                     $user = $model->where('email', $email)->first();
                     
                     if ($user && password_verify($password, $user['password'])) {
+                        // Check user status before allowing login
+                        $userStatus = isset($user['status']) ? $user['status'] : 'active';
+                        if ($userStatus !== 'active') {
+                            $session->setFlashdata('login_error', 'Your account is inactive. Please contact the administrator.');
+                            return redirect()->back();
+                        }
                         // Use the name field directly from database
                         $userName = $user['name'] ?? $user['email'];
                         
