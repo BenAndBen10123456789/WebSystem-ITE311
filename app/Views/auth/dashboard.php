@@ -56,6 +56,21 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <a href="<?= base_url('/courses/create') ?>" class="btn btn-success me-2">
+                        <i class="bi bi-plus-circle"></i> Create Course
+                    </a>
+                    <a href="<?= base_url('/admin/manage-users') ?>" class="btn btn-primary">
+                        <i class="bi bi-people"></i> Manage Users
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <?php if (isset($recentUsers) && !empty($recentUsers)): ?>
@@ -139,7 +154,7 @@
 <?php elseif ($role === 'teacher'): ?>
     <!-- Teacher Dashboard -->
     <div class="row mt-4">
-        <div class="col-12">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <h5>My Courses</h5>
@@ -154,6 +169,24 @@
                     <?php else: ?>
                         <p class="text-muted">No courses assigned yet.</p>
                     <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <a href="<?= base_url('/teacher/manage-students') ?>" class="btn btn-primary w-100 mb-2">
+                        <i class="bi bi-people"></i> Manage Students
+                    </a>
+                    <a href="<?= base_url('/courses/create') ?>" class="btn btn-success w-100 mb-2">
+                        <i class="bi bi-plus-circle"></i> Create Course
+                    </a>
+                    <a href="#" class="btn btn-secondary w-100">
+                        <i class="bi bi-upload"></i> Upload Materials
+                    </a>
                 </div>
             </div>
         </div>
@@ -239,11 +272,32 @@
                             <ul class="list-group">
                                 <?php foreach ($enrolledCourses as $course): ?>
                                     <li class="list-group-item enrolled-course-<?= esc($course['course_id']) ?>">
-                                        <strong><?= esc($course['course_title']) ?></strong>
-                                        <br>
-                                        <small class="text-muted"><?= esc($course['course_description'] ?? '') ?></small>
-                                        <br>
-                                        <small>Enrolled: <?= isset($course['enrollment_date']) ? esc($course['enrollment_date']) : '-' ?></small>
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <strong><?= esc($course['course_title']) ?></strong>
+                                                <?php if (!empty($course['course_code'])): ?>
+                                                    <span class="badge bg-secondary ms-2"><?= esc($course['course_code']) ?></span>
+                                                <?php endif; ?>
+                                                <br>
+                                                <small class="text-muted">
+                                                    <?php if (!empty($course['course_description'])): ?>
+                                                        <?= esc($course['course_description']) ?>
+                                                    <?php else: ?>
+                                                        No description available
+                                                    <?php endif; ?>
+                                                </small>
+                                                <br>
+                                                <small class="text-info">
+                                                    <i class="bi bi-calendar-check"></i>
+                                                    Enrolled: <?= isset($course['enrollment_date']) ? esc(date('M j, Y', strtotime($course['enrollment_date']))) : '-' ?>
+                                                </small>
+                                            </div>
+                                            <div class="text-end">
+                                                <small class="text-success">
+                                                    <i class="bi bi-check-circle-fill"></i> Enrolled
+                                                </small>
+                                            </div>
+                                        </div>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -416,14 +470,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Create new list item for enrolled course
                     const newListItem = document.createElement('li');
                     newListItem.className = 'list-group-item enrolled-course-' + data.course.course_id;
+                    const courseCodeBadge = data.course.course_code ? `<span class="badge bg-secondary ms-2">${data.course.course_code}</span>` : '';
+                    const descriptionText = data.course.course_description || 'No description available';
+                    const enrollmentDate = new Date(data.course.enrollment_date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+
                     newListItem.innerHTML = `
-                        <strong>${data.course.course_title}</strong>
-                        <br>
-                        <small class="text-muted">${data.course.course_description || ''}</small>
-                        <br>
-                        <small>Enrolled: ${data.course.enrollment_date}</small>
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong>${data.course.course_title}</strong>
+                                ${courseCodeBadge}
+                                <br>
+                                <small class="text-muted">${descriptionText}</small>
+                                <br>
+                                <small class="text-info">
+                                    <i class="bi bi-calendar-check"></i>
+                                    Enrolled: ${enrollmentDate}
+                                </small>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-success">
+                                    <i class="bi bi-check-circle-fill"></i> Enrolled
+                                </small>
+                            </div>
+                        </div>
                     `;
-                    
+
                     // Insert at the beginning of the list
                     enrolledUl.insertBefore(newListItem, enrolledUl.firstChild);
                     
@@ -471,4 +546,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <?php endif; ?>
 <?= $this->endSection() ?>
-

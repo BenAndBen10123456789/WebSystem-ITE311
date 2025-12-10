@@ -2,12 +2,24 @@
 
 <?= $this->section('content') ?>
 <div class="container py-4">
+    <?php if (session()->has('success')): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= esc(session('success')) ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <?php endif; ?>
+
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h3>Courses</h3>
-        <form id="search-form" class="d-flex" role="search" onsubmit="return false;">
-            <input id="course-search" class="form-control me-2" type="search" placeholder="Search courses..." aria-label="Search" value="<?= isset($search_term) ? esc($search_term) : '' ?>">
-            <button id="search-btn" class="btn btn-primary" type="button">Search</button>
-        </form>
+        <div class="d-flex gap-2">
+            <a href="<?= base_url('/courses/create') ?>" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Create Course
+            </a>
+            <form id="search-form" class="d-flex" role="search" onsubmit="return false;">
+                <input id="course-search" class="form-control me-2" type="search" placeholder="Search courses..." aria-label="Search" value="<?= isset($search_term) ? esc($search_term) : '' ?>">
+                <button id="search-btn" class="btn btn-primary" type="button">Search</button>
+            </form>
+        </div>
     </div>
 
     <div id="courses-list" class="row g-3">
@@ -21,7 +33,9 @@
                             <p class="card-text course-desc"><?= esc($course['description']) ?></p>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
-                            <button class="btn btn-sm btn-outline-primary enroll-btn" data-id="<?= esc($course['id']) ?>">Enroll</button>
+                            <?php if (session()->get('role') === 'student'): ?>
+                                <button class="btn btn-sm btn-outline-primary enroll-btn" data-id="<?= esc($course['id']) ?>">Enroll</button>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -86,6 +100,9 @@ $(function(){
                     $list.append($noResults);
                 } else {
                     resp.results.forEach(function(course){
+                        const enrollButtonHtml = resp.showEnrollButton ?
+                            `<button class="btn btn-sm btn-outline-primary enroll-btn" data-id="${course.id}">Enroll</button>` : '';
+
                         const html = `
                         <div class="col-md-4 course-item">
                             <div class="card h-100">
@@ -95,7 +112,7 @@ $(function(){
                                     <p class="card-text course-desc">${escapeHtml(course.description || '')}</p>
                                 </div>
                                 <div class="card-footer bg-transparent border-top-0">
-                                    <button class="btn btn-sm btn-outline-primary enroll-btn" data-id="${course.id}">Enroll</button>
+                                    ${enrollButtonHtml}
                                 </div>
                             </div>
                         </div>`;

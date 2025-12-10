@@ -265,7 +265,7 @@ class Auth extends Controller
                 $availableCourses = [];
                 try {
                     $enrolledCourses = $db->table('enrollments e')
-                        ->select('c.id as course_id, c.course_title as course_title, c.description as course_description, e.enrollment_date')
+                        ->select('c.id as course_id, c.course_code, c.course_title as course_title, c.description as course_description, e.enrollment_date')
                         ->join('courses c', 'c.id = e.course_id', 'left')
                         ->where('e.user_id', $userId)
                         ->orderBy('e.enrollment_date', 'DESC')

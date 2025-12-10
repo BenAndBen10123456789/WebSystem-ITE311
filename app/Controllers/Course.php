@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\CourseModel;
 use App\Models\EnrollmentModel;
 use App\Models\NotificationModel;
 use CodeIgniter\API\ResponseTrait; // For JSON responses (optional, but useful)
@@ -10,6 +11,13 @@ use CodeIgniter\API\ResponseTrait; // For JSON responses (optional, but useful)
 class Course extends BaseController
 {
     use ResponseTrait; // Enables setJSON() for easier JSON responses
+
+    protected $courseModel;
+
+    public function __construct()
+    {
+        $this->courseModel = new CourseModel();
+    }
 
     /**
      * Handle AJAX enrollment request.
@@ -106,6 +114,42 @@ class Course extends BaseController
     }
 
     /**
+     * Show create course form
+     */
+    public function create()
+    {
+        return view('courses/create');
+    }
+
+    /**
+     * Store new course
+     */
+    public function store()
+    {
+        $rules = [
+            'course_code' => 'required|min_length[2]|max_length[20]',
+            'course_title' => 'required|min_length[3]|max_length[255]',
+            'description' => 'permit_empty|max_length[1000]'
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $data = [
+            'course_code' => $this->request->getPost('course_code'),
+            'course_title' => $this->request->getPost('course_title'),
+            'description' => $this->request->getPost('description')
+        ];
+
+        if ($this->courseModel->insert($data)) {
+            return redirect()->to('/courses')->with('success', 'Course created successfully!');
+        }
+
+        return redirect()->back()->withInput()->with('error', 'Failed to create course.');
+    }
+
+    /**
      * Show list of courses (normal view)
      */
     public function index()
@@ -147,9 +191,15 @@ class Course extends BaseController
             ->get()
             ->getResultArray();
 
-        // If AJAX request, return JSON
+        // If AJAX request, return JSON with role-based enroll button
         if ($this->request->isAJAX()) {
-            return $this->response->setJSON(['results' => $results]);
+            $userRole = session()->get('role');
+            $showEnrollButton = ($userRole === 'student');
+
+            return $this->response->setJSON([
+                'results' => $results,
+                'showEnrollButton' => $showEnrollButton
+            ]);
         }
 
         // Normal request - render the listing view with results

@@ -30,6 +30,8 @@ $routes->post('/course/enroll', 'Course::enroll');
 $routes->get('/courses', 'Course::index');
 $routes->get('/courses/search', 'Course::search');
 $routes->post('/courses/search', 'Course::search');
+$routes->get('/courses/create', 'Course::create');
+$routes->post('/courses/store', 'Course::store');
 
 // Notifications routes
 $routes->get('/notifications', 'Notifications::get');
@@ -44,6 +46,7 @@ $routes->get('/materials/download/(:num)', 'Materials::download/$1');
 // Teacher routes (protected)
 $routes->group('teacher', ['filter' => 'roleauth'], function($routes) {
     $routes->get('dashboard', 'Auth::dashboard');
+    $routes->get('manage-students', 'Teacher::manageStudents');
 });
 
 // Admin routes (protected)

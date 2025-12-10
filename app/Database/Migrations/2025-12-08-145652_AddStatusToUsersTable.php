@@ -11,7 +11,7 @@ class AddStatusToUsersTable extends Migration
         $this->forge->addColumn('users', [
             'status' => [
                 'type' => 'ENUM',
-                'constraint' => ['active', 'inactive'],
+                'constraint' => ['active', 'inactive', 'dropped'],
                 'default' => 'active',
                 'after' => 'role'
             ]
