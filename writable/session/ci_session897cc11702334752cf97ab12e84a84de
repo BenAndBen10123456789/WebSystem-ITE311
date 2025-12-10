@@ -1,1 +1,0 @@
-__ci_last_regenerate|i:1760608690;_ci_previous_url|s:37:"http://localhost/ITE311-GUMABON/login";user_id|s:1:"1";user_name|s:9:"Admin One";user_email|s:17:"admin@example.com";role|s:5:"admin";isLoggedIn|b:1;__ci_vars|a:2:{s:7:"success";s:3:"old";s:5:"error";s:3:"new";}success|s:19:"Welcome, Admin One!";error|s:39:"Access Denied: Insufficient Permissions";
