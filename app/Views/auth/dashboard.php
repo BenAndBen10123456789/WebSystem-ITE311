@@ -238,6 +238,58 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
+                    <h5>Pending Enrollment Requests</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Requested Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (isset($pendingEnrollments) && !empty($pendingEnrollments)): ?>
+                                    <?php foreach ($pendingEnrollments as $enrollment): ?>
+                                        <tr>
+                                            <td>
+                                                <strong><?= esc($enrollment['student_name']) ?></strong><br>
+                                                <small class="text-muted"><?= esc($enrollment['student_email']) ?></small>
+                                            </td>
+                                            <td>
+                                                <strong><?= esc($enrollment['course_title']) ?></strong>
+                                            </td>
+                                            <td><?= isset($enrollment['enrollment_date']) ? esc(date('M j, Y', strtotime($enrollment['enrollment_date']))) : '-' ?></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success me-2 approve-btn" data-enrollment-id="<?= esc($enrollment['id']) ?>">
+                                                    <i class="bi bi-check-circle"></i> Approve
+                                                </button>
+                                                <button class="btn btn-sm btn-danger reject-btn" data-enrollment-id="<?= esc($enrollment['id']) ?>">
+                                                    <i class="bi bi-x-circle"></i> Reject
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="4" class="text-center text-muted">No pending enrollment requests.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
                     <h5>Recent Submissions</h5>
                 </div>
                 <div class="card-body">
@@ -310,6 +362,54 @@
         </div>
 
         <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Pending Enrollment Requests</h5>
+                </div>
+                <div class="card-body">
+                    <?php if (isset($pendingEnrollments) && !empty($pendingEnrollments)): ?>
+                        <ul class="list-group">
+                            <?php foreach ($pendingEnrollments as $course): ?>
+                                <li class="list-group-item">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <strong><?= esc($course['course_title']) ?></strong>
+                                            <?php if (!empty($course['course_code'])): ?>
+                                                <span class="badge bg-secondary ms-2"><?= esc($course['course_code']) ?></span>
+                                            <?php endif; ?>
+                                            <br>
+                                            <small class="text-muted">
+                                                <?php if (!empty($course['course_description'])): ?>
+                                                    <?= esc($course['course_description']) ?>
+                                                <?php else: ?>
+                                                    No description available
+                                                <?php endif; ?>
+                                            </small>
+                                            <br>
+                                            <small class="text-warning">
+                                                <i class="bi bi-clock"></i>
+                                                Requested: <?= isset($course['enrollment_date']) ? esc(date('M j, Y', strtotime($course['enrollment_date']))) : '-' ?>
+                                            </small>
+                                        </div>
+                                        <div class="text-end">
+                                            <small class="text-warning">
+                                                <i class="bi bi-hourglass-split"></i> Pending Approval
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php else: ?>
+                        <p class="text-muted">No pending enrollment requests.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
             <div class="card">
                 <div class="card-header">
                     <h5>Available Courses</h5>
@@ -396,6 +496,77 @@
     </div>
 <?php endif; ?>
 
+<?php if ($role === 'teacher'): ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const approveButtons = document.querySelectorAll('.approve-btn');
+    const rejectButtons = document.querySelectorAll('.reject-btn');
+
+    approveButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const enrollmentId = this.getAttribute('data-enrollment-id');
+            const row = this.closest('tr');
+
+            if (confirm('Are you sure you want to approve this enrollment request?')) {
+                fetch('<?= base_url('/teacher/approve-enrollment') ?>', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: 'enrollment_id=' + enrollmentId + '&<?= csrf_token() ?>=<?= csrf_hash() ?>'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        row.remove(); // Remove the row from the table
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            }
+        });
+    });
+
+    rejectButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const enrollmentId = this.getAttribute('data-enrollment-id');
+            const row = this.closest('tr');
+
+            if (confirm('Are you sure you want to reject this enrollment request?')) {
+                fetch('<?= base_url('/teacher/reject-enrollment') ?>', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: 'enrollment_id=' + enrollmentId + '&<?= csrf_token() ?>=<?= csrf_hash() ?>'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        row.remove(); // Remove the row from the table
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            }
+        });
+    });
+});
+</script>
+<?php endif; ?>
+
 <?php if ($role === 'student'): ?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -450,26 +621,26 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.getElementById('available-courses-list').innerHTML = '<p class="text-muted">No available courses.</p>';
                     }
                     
-                    // Add course to enrolled courses
-                    const enrolledList = document.getElementById('enrolled-courses-list');
-                    let enrolledUl = enrolledList.querySelector('ul');
-                    
-                    // Remove "no enrollments" message if exists
-                    const noEnrollmentsMsg = document.getElementById('no-enrollments-msg');
-                    if (noEnrollmentsMsg) {
-                        noEnrollmentsMsg.remove();
+                    // Add course to pending enrollments
+                    const pendingCardBody = document.querySelectorAll('.card .card-body')[1]; // Second card body is pending enrollments
+                    let pendingUl = pendingCardBody.querySelector('ul');
+
+                    // Remove "no pending" message if exists
+                    const noPendingMsg = pendingCardBody.querySelector('.text-muted');
+                    if (noPendingMsg) {
+                        noPendingMsg.remove();
                     }
-                    
+
                     // Create UL if it doesn't exist
-                    if (!enrolledUl) {
-                        enrolledUl = document.createElement('ul');
-                        enrolledUl.className = 'list-group';
-                        enrolledList.appendChild(enrolledUl);
+                    if (!pendingUl) {
+                        pendingUl = document.createElement('ul');
+                        pendingUl.className = 'list-group';
+                        pendingCardBody.appendChild(pendingUl);
                     }
-                    
-                    // Create new list item for enrolled course
+
+                    // Create new list item for pending course
                     const newListItem = document.createElement('li');
-                    newListItem.className = 'list-group-item enrolled-course-' + data.course.course_id;
+                    newListItem.className = 'list-group-item pending-course-' + data.course.course_id;
                     const courseCodeBadge = data.course.course_code ? `<span class="badge bg-secondary ms-2">${data.course.course_code}</span>` : '';
                     const descriptionText = data.course.course_description || 'No description available';
                     const enrollmentDate = new Date(data.course.enrollment_date).toLocaleDateString('en-US', {
@@ -486,21 +657,21 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <br>
                                 <small class="text-muted">${descriptionText}</small>
                                 <br>
-                                <small class="text-info">
-                                    <i class="bi bi-calendar-check"></i>
-                                    Enrolled: ${enrollmentDate}
+                                <small class="text-warning">
+                                    <i class="bi bi-clock"></i>
+                                    Requested: ${enrollmentDate}
                                 </small>
                             </div>
                             <div class="text-end">
-                                <small class="text-success">
-                                    <i class="bi bi-check-circle-fill"></i> Enrolled
+                                <small class="text-warning">
+                                    <i class="bi bi-hourglass-split"></i> Pending Approval
                                 </small>
                             </div>
                         </div>
                     `;
 
                     // Insert at the beginning of the list
-                    enrolledUl.insertBefore(newListItem, enrolledUl.firstChild);
+                    pendingUl.insertBefore(newListItem, pendingUl.firstChild);
                     
                     // Refresh notifications after successful enrollment
                     if (typeof window.fetchNotifications === 'function') {

@@ -53,10 +53,11 @@ class Course extends BaseController
             ]);
         }
 
-        // Step 4: Insert new enrollment with current timestamp
+        // Step 4: Insert new enrollment with current timestamp and pending status
         $data = [
             'user_id' => $userId,
             'course_id' => $courseId,
+            'status' => 'pending'
             // enrollment_date will be auto-set to current timestamp in the model
         ];
 
@@ -82,7 +83,7 @@ class Course extends BaseController
             $notificationModel = new NotificationModel();
             $notificationData = [
                 'user_id' => $userId,
-                'message' => "You have been enrolled in {$courseTitle}",
+                'message' => "Enrollment request submitted for {$courseTitle}. Waiting for teacher approval.",
                 'is_read' => 0,
                 'created_at' => date('Y-m-d H:i:s')
             ];
@@ -97,12 +98,13 @@ class Course extends BaseController
             
             return $this->response->setJSON([
                 'success' => true,
-                'message' => 'Successfully enrolled in the course!',
+                'message' => 'Enrollment request submitted successfully! Waiting for teacher approval.',
                 'course' => [
                     'course_id' => $course['id'] ?? $courseId,
                     'course_title' => $course['course_title'] ?? '',
                     'course_description' => $course['description'] ?? '',
-                    'enrollment_date' => $enrollment['enrollment_date'] ?? date('Y-m-d H:i:s')
+                    'enrollment_date' => $enrollment['enrollment_date'] ?? date('Y-m-d H:i:s'),
+                    'status' => 'pending'
                 ]
             ]);
         } else {

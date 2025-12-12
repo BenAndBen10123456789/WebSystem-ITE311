@@ -73,7 +73,7 @@ trait TimeTrait
      */
     public function __construct(?string $time = null, $timezone = null, ?string $locale = null)
     {
-        $this->locale = $locale !== null && $locale !== '' && $locale !== '0' ? $locale : Locale::getDefault();
+        $this->locale = $locale !== null && $locale !== '' && $locale !== '0' ? $locale : 'en';
 
         $time ??= '';
 

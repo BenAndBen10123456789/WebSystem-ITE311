@@ -47,6 +47,8 @@ $routes->get('/materials/download/(:num)', 'Materials::download/$1');
 $routes->group('teacher', ['filter' => 'roleauth'], function($routes) {
     $routes->get('dashboard', 'Auth::dashboard');
     $routes->get('manage-students', 'Teacher::manageStudents');
+    $routes->post('approve-enrollment', 'Teacher::approveEnrollment');
+    $routes->post('reject-enrollment', 'Teacher::rejectEnrollment');
 });
 
 // Admin routes (protected)

@@ -232,6 +232,7 @@ class Auth extends Controller
             } elseif ($role === 'teacher') {
                 $courses = [];
                 $allCourses = [];
+                $pendingEnrollments = [];
                 try {
                     // Get courses for display (may not have teacher_id yet)
                     $courses = $db->table('courses')
@@ -243,10 +244,15 @@ class Auth extends Controller
                     // Later, you can filter by: ->where('teacher_id', $userId)
                     $roleData['courses'] = $courses;
                     $roleData['allCourses'] = $courses;
+                    // Get pending enrollments for approval
+                    $enrollmentModel = new \App\Models\EnrollmentModel();
+                    $pendingEnrollments = $enrollmentModel->getPendingEnrollments();
+                    $roleData['pendingEnrollments'] = $pendingEnrollments;
                 } catch (\Throwable $e) {
                     $courses = [];
                     $roleData['courses'] = [];
                     $roleData['allCourses'] = [];
+                    $roleData['pendingEnrollments'] = [];
                 }
                 $notifications = [];
                 try {
@@ -262,17 +268,28 @@ class Auth extends Controller
                 $roleData['notifications'] = $notifications;
             } elseif ($role === 'student') {
                 $enrolledCourses = [];
+                $pendingEnrollments = [];
                 $availableCourses = [];
                 try {
                     $enrolledCourses = $db->table('enrollments e')
                         ->select('c.id as course_id, c.course_code, c.course_title as course_title, c.description as course_description, e.enrollment_date')
                         ->join('courses c', 'c.id = e.course_id', 'left')
                         ->where('e.user_id', $userId)
+                        ->where('e.status', 'approved')
+                        ->orderBy('e.enrollment_date', 'DESC')
+                        ->get()
+                        ->getResultArray();
+                    $pendingEnrollments = $db->table('enrollments e')
+                        ->select('c.id as course_id, c.course_code, c.course_title as course_title, c.description as course_description, e.enrollment_date')
+                        ->join('courses c', 'c.id = e.course_id', 'left')
+                        ->where('e.user_id', $userId)
+                        ->where('e.status', 'pending')
                         ->orderBy('e.enrollment_date', 'DESC')
                         ->get()
                         ->getResultArray();
                 } catch (\Throwable $e) {
                     $enrolledCourses = [];
+                    $pendingEnrollments = [];
                 }
                 try {
                     $allCourses = $db->table('courses')
@@ -287,6 +304,7 @@ class Auth extends Controller
                     $availableCourses = [];
                 }
                 $roleData['enrolledCourses'] = $enrolledCourses;
+                $roleData['pendingEnrollments'] = $pendingEnrollments;
                 $roleData['availableCourses'] = $availableCourses;
                 
                 // Get materials for enrolled courses
